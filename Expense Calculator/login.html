@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>Sign In</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container .text-center" style="margin: 3% 0; padding-left: 45%;">
+            <h1>Sign In</h1>
+        </div>
+        <div class="container" style="margin-top: 3%;">
+            <form class="row g-3">
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">User Name</label>
+                    <input type="text" class="form-control" id="userName">
+                    </div>
+                <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName">
+                </div>
+                <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">LastName</label>
+                <input type="text" class="form-control" id="lastName">
+                </div>
+                <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+                </div>
+                <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
+                </div>
+                <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="Address1" placeholder="1234 Main St">
+                </div>
+                <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="Address2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="city">
+                </div>
+                <div class="col-md-2">
+                <label for="inputZip" class="form-label">State</label>
+                <input type="text" class="form-control" id="state">
+                </div>
+                <div class="col-md-2">
+                <label for="inputZip" class="form-label">Limit</label>
+                <input type="text" class="form-control" id="zipCode">
+                </div>
+                <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="T&C">
+                    <label class="form-check-label" for="gridCheck">
+                        I agree that information provided belongs to me...!
+                    </label>
+                </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" id="signIn" style="margin-left: 8%;">Sign in</button>
+            </div>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyDMQBorCgoFWb3rHIZ0E1VTzrwnWl7RE4Y",
+                authDomain: "expensecal-5def1.firebaseapp.com",
+                projectId: "expensecal-5def1",
+                storageBucket: "expensecal-5def1.appspot.com",
+                messagingSenderId: "1067716138026",
+                appId: "1:1067716138026:web:766c4a40d966f746d89f53"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            import {getDatabase,ref,set,get,child,update,remove}
+            from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+            
+
+            const db = getDatabase();
+
+            let userName = document.getElementById("userName");
+            let firstName = document.getElementById("firstName");
+            let lastName = document.getElementById("lastName");
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+            let address1 = document.getElementById("Address1");
+            let address2 = document.getElementById("Address2");
+            let city = document.getElementById("city");
+            let state = document.getElementById("state");
+            let limit = document.getElementById("zipCode");
+            let tandc = document.getElementById("T&C");
+            let signIn = document.getElementById("signIn");
+
+            function addUser(){
+                if(tandc.checked){
+                const db = getDatabase()
+                set(ref(db,"User/" + userName.value),{
+                    firstName : firstName.value,
+                    lastName : lastName.value,
+                    email : email.value,
+                    password : password.value,
+                    address1 : address1.value,
+                    address2 : address2.value,
+                    city : city.value,
+                    state : state.value,
+                    limit : limit.value
+
+                }).then(()=>{
+                    location.href = "signIn.html"
+                }).catch((error)=>{
+                    alert("please try again" + error);
+                })
+                }else{
+                    alert("Please Accept T&C")
+                } 
+            }
+            
+            signIn.addEventListener('click',addUser)
+        </script>
+    </body>
+</html>
