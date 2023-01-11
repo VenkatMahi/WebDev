@@ -1,0 +1,55 @@
+.order{
+    background-color: #ee5257;
+    height: 100vh;
+    height: fit-content;
+    overflow-y: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.order p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.orderRecived{
+    height: 100px;
+    width: 87%;
+    margin: 20px;
+    background-color: white;
+    padding: 3%;
+}
+button{
+    padding: 5px;
+    border: none;
+    color: white;
+    background-color: #ed1c24;
+    border-radius: 5%;
+    width: 90px;
+}
+button:hover{
+    background-color:  #ee5257;
+}
+.check button{
+    margin-left: 47%;
+    width: fit-content;
+    font-weight: bold;
+    height: 40px;
+    width: 180px;
+}
+.top{
+
+    height: 60px;
+    width: 1800px;
+    box-shadow: 5px 5px 5px rgb(179, 176, 176);
+}
+.top h1{
+    margin-left: 4.5%;
+    padding-top: 1px;
+    font-size: xxx-large;
+    font-family: serif;
+    font-weight: lighter;
+}
+.top img{
+    float: left;
+    margin-left: 15px;
+
+}

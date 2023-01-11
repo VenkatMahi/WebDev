@@ -1,0 +1,719 @@
+<html>
+
+<head>
+    <title>Food Ordering</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="frontend.css">
+    <link rel="stylesheet" href="button.scss">
+</head>
+
+<body class="body" id="blur">
+    <header class="box">
+        <img src="icon.png" alt="icon" height="70px" width="100px">
+        <label for="heading">&nbsp; SUMATO</label>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#nonVeg">Best Seller</a>
+        <a href="#gal">Gallery</a>
+        <div class="center">
+          <button id="show-login" class="login">Login</button>
+      </div>
+      <div class="popup">
+          <div class="close-btn">&times;</div>
+          <div class="form">
+              <h2>Log in</h2>
+              <div class="form-element">
+                  <label for="email">Roll No</label>
+                  <input type="text" id="email" placeholder="Enter roll no">
+              </div>
+              <div class="form-element">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" placeholder="Enter password">
+              </div>
+              <div class="form-element">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Remember me</label>
+              </div>
+              <div class="form-element">
+                  <button id="enter">Sign in</button>
+              </div>
+              <div class="form-element">
+                  <a href="#">Forgot password?</a>
+              </div>
+          </div>
+      </div>
+    </header>
+    <aside>
+      <div class="sidebox">
+        <div class="name">
+          <h1>Items In Cart</h1>
+        </div>
+        <div class="cart" id="cart">
+            <p id="item1"></p>
+            <p id="item2"></p>
+            <p id="item3"></p>
+            <p id="item4"></p>
+            <p id="item5"></p>
+            <div class="orderStatus" id="check">
+              <p id="order1"></p>
+            </div>
+        </div>  
+        <div class="total">
+          <h2 id="amountToBePaid">To Pay : </h2>
+          <br>
+        </div>
+        <div class="order">
+          <button id="orderbutton">Pay</button>
+        </div>
+      </div>
+    </aside>
+    <main class="MainBox">
+      <div class="Home" id="home">
+        <h2>About Us</h2>
+        
+        <div class="img">
+          <img src="aboutus.jpg" height="500px" width="1100px">
+        </div>
+
+      </div>
+      <div class="menu" id="menu">
+          <h2>Menu</h2>
+          <div class="veg">
+            <h5>Veg</h5>
+          <div class="biryani">
+            <div class="images">
+              <img src="food/veg/veg-biryani-recipe.jpg" alt="" height="100px" width="100px" id="biryani">
+            </div>
+            <div class="all">
+            <div class="te">
+              <h3>Biryani</h3>
+            </div>
+            <div class="add">  
+              <div class="buttons">
+                 <button id="Add" class="pulse">Add</button>
+              </div>
+              <h4>Price : 80</h4>
+            </div>  
+            </div>
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/veg/veg fried rice.jpg" alt="fried rice" height="100px" width="100px">
+            </div>
+            <div class="all">
+            <div class="te">
+              <h3>Fried Rice</h3>
+            </div>
+            <div class="add">  
+              <button id="1">Add</button>
+              <h4>Price :40 </h4>
+            </div>  
+            </div>
+          </div>
+          <div class="vegmanchuria">
+            <div class="images">
+              <img src="food/veg/veg manchuria.jpg" alt="veg manchuria" height="100px" width="100px">
+            </div>
+            <div class="all">
+            <div class="te">
+              <h3>Manchuria</h3>
+            </div>
+            <div class="add">  
+              <button id="2">Add</button>
+              <h4>Price : 35</h4>
+            </div>  
+            </div>
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/veg/veg noodles.jpg" alt="veg noodles" height="100px" width="100px">
+            </div>
+            <div class="all">
+            <div class="te">
+              <h3>Veg Noodles</h3>
+            </div>
+            <div class="add">  
+              <button id="3">Add</button>
+              <h4>Price :40 </h4>
+            </div>  
+            </div>
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/veg/veg grilled sandwich.jpg" alt="sandwich" height="100px" width="100px">
+            </div>
+            <div class="all">
+            <div class="te">
+              <h3>Sandwich</h3>
+            </div>
+            <div class="add">  
+              <button id="4">Add</button>
+              <h4>Price :45 </h4>
+            </div>  
+            </div>
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/veg/veg puff.jpg" alt="veg puff" height="100px" width="100px">
+            </div>
+            <div class="all">
+            <div class="te">
+              <h3>Veg Puff</h3>
+            </div>
+            <div class="add">  
+              <button id="5">Add</button>
+              <h4>Price :12 </h4>
+            </div>  
+            </div>
+          </div>
+          </div>
+          <div class="nonVeg">
+            <h5>Non - Veg</h5>
+            <div class="friedRice">
+              <div class="images">
+                <img src="food/non veg/chicken fried rice.png" alt="fried rice" height="100px" width="100px">
+              </div>
+              <div class="all1">
+              <div class="te1">
+                <h3>Chicken</h3>
+                <h3>Fried Rice</h3>
+              </div>
+              <div class="add">  
+                <button id="6">Add</button>
+                <h4>Price :60 </h4>
+              </div>  
+              </div>
+            </div>
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/non veg/chicken manchuria.jpg" alt="Manchuria" height="100px" width="100px">
+            </div>
+            <div class="all1">
+            <div class="te1">
+              <h3>Chicken</h3>
+              <h3>Manchuria</h3>
+            </div>
+            <div class="add">  
+              <button id="7">Add</button>
+              <h4>Price :80 </h4>
+            </div>  
+            </div>
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/non veg/chicken noodles.jpg" alt="chicken noodles" height="100px" width="100px">
+            </div>
+            <div class="all1">
+            <div class="te1">
+              <h3>Chicken</h3>
+              <h3>Noodles</h3>
+            </div>
+            <div class="add">  
+              <button id="8">Add</button>
+              <h4>Price :60 </h4>
+            </div>  
+            </div>
+            
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/non veg/egg fried rice.jpg" alt="egg friedRice" height="100px" width="100px">
+            </div>
+            <div class="all1">
+            <div class="te1">
+              <h3>Egg</h3>
+              <h3>Fried Rice</h3>
+            </div>
+            <div class="add">  
+              <button id="9">Add</button>
+              <h4>Price :45 </h4>
+            </div>  
+            </div>
+            
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/non veg/egg noodles.jpg" alt="Egg noodles" height="100px" width="100px">
+            </div>
+            <div class="all1">
+            <div class="te1">
+              <h3>Egg</h3>
+              <h3>Noodles</h3>
+            </div>
+            <div class="add">  
+              <button id="10">Add</button>
+              <h4>Price :50 </h4>
+            </div>  
+            </div>
+            
+          </div>
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/non veg/chicken puff.jpg" alt="chicken puff" height="100px" width="100px">
+            </div>
+            <div class="all1">
+            <div class="te1">
+              <h3>Chicken</h3>
+              <h3>Puff</h3>
+            </div>
+            <div class="add">  
+              <button id="11">Add</button>
+              <h4>Price :15 </h4>
+            </div>  
+            </div>  
+          </div>
+          <div class="milkshakes">
+            <h5>MilkShakes</h5>
+            <div class="friedRice">
+              <div class="images">
+                <img src="food/milkshakes/chocolate milkshake.jpg" alt="chocolate milkshake" height="100px" width="100px">
+              </div>
+              <div class="all1">
+              <div class="te1">
+                <h3>Chocolate</h3>
+                <h3>MilkShake</h3>
+              </div>
+              <div class="add">  
+                <button id="12">Add</button>
+                <h4>Price :60 </h4>
+              </div>  
+              </div>  
+            </div>
+            <div class="friedRice">
+              <div class="images">
+                <img src="food/milkshakes/butterscotch milkshake.jpg" alt="butterscotch shake" height="100px" width="100px">
+              </div>
+              <div class="all1">
+              <div class="te1">
+                <h3>Butterscotch</h3>
+                <h3>MilkShake</h3>
+              </div>
+              <div class="add">  
+                <button id="13">Add</button>
+                <h4>Price :60  </h4>
+              </div>  
+              </div>  
+            </div>
+            <div class="friedRice">
+              <div class="images">
+                <img src="food/milkshakes/oreo milkshake.jpg" alt="oreo MilkShake" height="100px" width="100px">
+              </div>
+              <div class="all1">
+              <div class="te1">
+                <h3>Oreo</h3>
+                <h3>MilkShake</h3>
+              </div>
+              <div class="add">  
+                <button id="14">Add</button>
+                <h4>Price :60 </h4>
+              </div>  
+              </div>  
+            </div>
+            <div class="friedRice">
+              <div class="images">
+                <img src="food/milkshakes/strawberry milkshake.jpg" alt="strawberry shake" height="100px" width="100px">
+              </div>
+              <div class="all1">
+              <div class="te1">
+                <h3>Strawberry</h3>
+                <h3>MilkShake</h3>
+              </div>
+              <div class="add">  
+                <button id="15">Add</button>
+                <h4>Price :50 </h4>
+              </div>  
+              </div>  
+            </div>
+
+          </div>
+
+          <div class="icecream">
+            <h5>Ice Cream</h5>
+            <div class="friedRice">
+              <div class="images">
+                <img src="food/icecream/butterscotch icecream.jpg" alt="Butterscotch icecream" height="100px" width="100px">
+              </div>
+              <div class="all1">
+              <div class="te1 ">
+                <h3>Butterscotch</h3>
+                <h3>Ice Cream</h3>
+              </div>
+              <div class="add">  
+                <button id="16">Add</button>
+                <h4>Price :50 </h4>
+              </div>  
+              </div>  
+            </div>
+
+          <div class="friedRice">
+            <div class="images">
+              <img src="food/icecream/chocolate ice cream.jpg" alt="chocolate icecream" height="100px" width="100px">
+            </div>
+            <div class="all1">
+            <div class="te1">
+              <h3>Chocolate</h3>
+              <h3>Ice cream</h3>
+            </div>
+            <div class="add">  
+              <button id="17">Add</button>
+              <h4>Price :50 </h4>
+            </div>  
+            </div>  
+          </div>
+        <div class="friedRice">
+          <div class="images">
+            <img src="food/icecream/Vanilla-Ice-Cream-cone-glass-sq.jpeg" alt="vanilla" height="100px" width="100px">
+          </div>
+          <div class="all1">
+          <div class="te1">
+            <h3>vanilla</h3>
+            <h3>Ice Cream</h3>
+          </div>
+          <div class="add">  
+            <button id="18">Add</button>
+            <h4>Price :40 </h4>
+          </div>  
+          </div>  
+        </div>    
+          </div>
+          <div class="chai">
+            <h5>Chai Coffee</h5>
+            <div class="friedRice">
+              <div class="images">
+                <img src="food/chai coffe/Chai.jpg" alt="chai" height="100px" width="100px">
+              </div>
+              <div class="all1">
+              <div class="te  ">
+                <h3>Tea</h3>
+              </div>
+              <div class="add">  
+                <button id="19">Add</button>
+                <h4>Price :10 </h4>
+              </div>  
+              </div>  
+            </div>
+            <div class="friedRice">
+              <div class="images">
+                <img src="food/chai coffe/coffee.jpg" alt="coffee" height="100px" width="100px">
+              </div>
+              <div class="all1">
+              <div class="te  ">
+                <h3>Coffee</h3>
+              </div>
+              <div class="add">  
+                <button id="20">Add</button>
+                <h4>Price :10 </h4>
+              </div>  
+              </div>  
+            </div>
+
+          </div>
+
+
+        </div>
+      <div class="gallery" id="gal">
+          <h2>Gallery</h2>
+          <div class="images">
+            <img src="Canteen\front.jpg" height="220px" width="360px">
+          </div>
+          <div class="images">
+            <img src="Canteen\images.jpg" height="220px" width="360px">
+          </div>
+          <div class="images">
+            <img src="Canteen\2.jpg" height="220px" width="360px">
+          </div>
+          <div class="images">
+            <img src="Canteen\3.jpg" height="220px" width="360px">
+          </div>
+          <div class="images">
+            <img src="Canteen\4.jpg" height="220px" width="360px">
+          </div>
+          <div class="images">
+            <img src="Canteen\5.jpg" height="220px" width="360px">
+          </div>
+      </div>
+      
+	
+	<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDotKuKEoDoOTIDQEZBDI7FBRVH2YBqVP8",
+    authDomain: "food-ordering-app-a1c4c.firebaseapp.com",
+    projectId: "food-ordering-app-a1c4c",
+    storageBucket: "food-ordering-app-a1c4c.appspot.com",
+    messagingSenderId: "962590403114",
+    appId: "1:962590403114:web:a3e55dc0199a622b2e7153"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  import {getDatabase,ref,get,set,child,update,remove}
+  from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+
+  /*--- Order Items and price----*/
+  var pay=0;
+  const orderList = ["","","","",""];
+  const quantity =["","","","",""];
+  const cost = ["","","","",""];
+  const items = ["Biryani","Fried rice","Manchuria","veg noodles","sandwich","veg puff","chicken fried rice","chicken manchuria",
+  "chicken noodles","Egg Fried Rice","Egg Noodles","Chicken Puff","Chocolate Shake","Butterscotch shake","Oreo shake","strawberry shake",
+  "butterscotch Icecream","Chocolate Icecream","Vanilla Icecream","Tea","Coffe"];
+  const buttonid = ["Add","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"];
+  const price = [80,40,35,40,45,12,60,80,60,45,50,15,60,60,60,50,50,50,40,10,10];
+
+  /*------  Add Buttons  ----------*/
+  var addb=document.getElementById("Add");
+  var add1=document.getElementById("1");
+  var add2=document.getElementById("2");
+  var add3=document.getElementById("3");
+  var add4=document.getElementById("4");
+  var add5=document.getElementById("5");
+  var add6=document.getElementById("6");
+  var add7=document.getElementById("7");
+  var add8=document.getElementById("8");
+  var add9=document.getElementById("9");
+  var add10=document.getElementById("10");
+  var add11=document.getElementById("11");
+  var add12=document.getElementById("12");
+  var add13=document.getElementById("13");
+  var add14=document.getElementById("14");
+  var add15=document.getElementById("15");
+  var add16=document.getElementById("16");
+  var add17=document.getElementById("17");
+  var add18=document.getElementById("18");
+  var add19=document.getElementById("19");
+  var add20=document.getElementById("20");
+
+  var amountPay = "To Pay : ";
+  /*-------------cartitems-----------------*/
+  var CartItem1 = document.getElementById("item1");
+  var CartItem2 = document.getElementById("item2");
+  var CartItem3 = document.getElementById("item3");
+  var CartItem4 = document.getElementById("item4");
+  var CartItem5 = document.getElementById("item5");
+  var amount = document.getElementById("amountToBePaid");
+  var orderbutton = document.getElementById("orderbutton");
+  var order1 = document.getElementById("order1");
+  var order2 = document.getElementById("order2");
+  const cart = [CartItem1,CartItem2,CartItem3,CartItem4,CartItem5];
+
+  /*-------------------Login Check----------------------*/
+  const db = getDatabase();
+  if(localStorage.getItem("logged_in") == 1){
+    document.querySelector("#show-login").textContent = localStorage.getItem("name");
+  }
+  else{
+    var login = "false";
+  var b = document.getElementById("enter");
+  var button = document.getElementById("show-login");
+  var rollno = document.getElementById("email");
+  var password = document.getElementById("password");
+    document.querySelector("#show-login").addEventListener("click",function(){
+      if(login!=="true"){
+        document.querySelector(".popup").classList.add("active");
+      }else{
+        console.log("already login");
+      }
+     });
+    document.querySelector(".popup .close-btn").addEventListener("click",function(){
+        document.querySelector(".popup").classList.remove("active");
+    });
+    b.addEventListener('click',show);
+  }
+ /*--------------------Login System-----------------------*/ 
+function show(){
+    const dbref = ref(db);
+    
+    get(child(dbref,"Login/" + rollno.value)).then((snapshot)=>{
+      if(snapshot.exists()){
+        console.log(localStorage);
+        if(password.value==="ngit123$" || localStorage.getItem("logged_in") =="1"){
+          document.querySelector('#show-login').textContent = snapshot.val().name;
+          login="true";
+          localStorage.setItem("logged_in","1");
+          localStorage.setItem("rollNo",rollno.value);
+          localStorage.setItem("name",snapshot.val().name);
+          console.log( localStorage.getItem("logged_in"));
+          document.querySelector(".popup").classList.remove("active");
+        /* closes after login*/
+        }else{
+          alert("wrong password");
+        }
+      }
+      else{
+        alert("User not exist")
+      }
+    })
+    .catch((error)=>             {
+      alert("inqery" + error);
+    })
+  }
+  var order_id=0;
+  var roll = localStorage.getItem("rollNo");
+  console.log(roll);
+  /*---------------saving and display the elements in cart-------------------*/
+  var orderCheck = false;
+  /*----------------To send order to Firebase Database--------------------*/
+ function order(){
+   orderCheck = true;
+    order_id++;
+    const dbref = ref(db);
+    get(child(dbref,"Order/")).then((snapshot)=>{
+      localStorage.setItem("trackingId",parseInt(snapshot.val().tokenId)+1);
+    })
+    if(length>0){
+      if(localStorage.getItem("logged_in")==="1"){
+        set(ref(db,"Order/" + roll),{
+          trackingId : localStorage.getItem("trackingId"),
+          OrderId : order_id,
+          orderStatus : "pending",
+          orderItem : orderList
+
+        }).then(()=>{
+          localStorage.setItem("trackingId",parseInt(localStorage.getItem("trackingId"))+parseInt(1));
+          alert("please pay the bill");
+          localStorage.setItem("orderPlaced","true");
+          document.location.href = "payment.html";
+
+        }).catch((error)=>{
+          alert("please try again" + error);
+        })
+      }
+      else{
+        alert("Login to Your Account");
+      }
+    }else{
+      alert("cart is empty");
+    }  
+  }
+
+  /*-----------------------Show cart Items in cart-------------------------------*/
+  function showCart(){
+      for(let i=0;i<length;i++){
+        cart[i].innerHTML = orderList[i] + " x(" + quantity[i] + ")";
+      }
+  }
+  /*--------------Function to Check if item already exists in cart---------------*/
+  /*------------------function to add item to cart-------------------------*/
+  var length=0;
+  function addOrder(){
+    if(orderCheck===false && localStorage.getItem("orderPlaced")==="false"){
+    for(let i=0;i<5;i++){
+      if(orderList[i]==''){
+        for(let j=0;j<21;j++){
+          if(this.id === buttonid[j]){
+            if(orderList.indexOf(items[j])===-1){
+              orderList[i] = items[j];
+              quantity[i] = 1;  
+              length=length+1;
+            }else{
+              quantity[orderList.indexOf(items[j])] = quantity[orderList.indexOf(items[j])]  + 1 ;
+              
+            }
+            pay = pay + price[j];
+            console.log(quantity);
+          }
+        }
+        console.log(orderList[i]);
+        
+        i=5;
+        showCart();
+        amount.innerHTML = amountPay + pay;
+       }
+      }
+    }else{
+      alert("order already placed");
+    }
+  }
+  var ch ="";
+  var statusChecked = "false";
+    function n(){
+      setInterval(function(){
+        const dbref = ref(db);
+        get(child(dbref,"Order/" + roll)).then((snapshot)=>{
+          if(snapshot.exists()){
+            if(snapshot.val().orderStatus===undefined){
+
+            }else{
+                cart[0].innerHTML = "Token no : " + localStorage.getItem("trackingId");
+                 document.getElementById("order1").innerHTML = "Order Status : " + snapshot.val().orderStatus;
+            }
+            if(snapshot.val().orderStatus=="Ready" && statusChecked=="false"){
+              alert("Your Order Is Ready To Collect");
+              statusChecked = "true";
+            }
+            if(snapshot.val().orderStatus=="Collected"){
+              ch = "collected";
+              c();
+              del();
+            }
+          }
+        })
+      },1000);
+    }
+    function c(){   
+    if(ch==="collected"){
+      orderCheck = false;
+      cart[0].innerHTML = "";
+      localStorage.setItem("orderPlaced","false");
+      document.getElementById("order1").innerHTML = "";
+      for(let i=0;i<length;i++){
+        orderList[i]="";
+        quantity[i]="";
+        cart[i].innerHTML = "";
+      }
+      length=0;
+      pay=0;
+      amount.innerHTML = amountPay;
+    
+    }
+  }
+
+
+    function del(){
+      remove(ref(db,"Order/" + roll))
+      alert("Order Collected")
+
+    }
+
+ 
+  function open(){
+    console.log("clicked");
+  }
+  /*--------- Adding Event Listener To Buttons----------*/
+  n();
+  document.getElementById("biryani").addEventListener('click',open)
+  orderbutton.addEventListener('click',order);    
+  addb.addEventListener('click',addOrder);
+  add1.addEventListener('click',addOrder);
+  add2.addEventListener('click',addOrder);
+  add3.addEventListener('click',addOrder);
+  add4.addEventListener('click',addOrder);
+  add5.addEventListener('click',addOrder);
+  add6.addEventListener('click',addOrder);
+  add7.addEventListener('click',addOrder);
+  add8.addEventListener('click',addOrder);
+  add9.addEventListener('click',addOrder);
+  add10.addEventListener('click',addOrder);
+  add11.addEventListener('click',addOrder);
+  add12.addEventListener('click',addOrder);
+  add13.addEventListener('click',addOrder);
+  add14.addEventListener('click',addOrder);
+  add15.addEventListener('click',addOrder);
+  add16.addEventListener('click',addOrder);
+  add17.addEventListener('click',addOrder);
+  add18.addEventListener('click',addOrder);
+  add19.addEventListener('click',addOrder);
+  add20.addEventListener('click',addOrder);
+  
+  
+</script>
+</body>
+
+</html>

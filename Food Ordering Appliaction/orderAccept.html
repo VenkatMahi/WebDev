@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Order Accepting</title>
+        <link rel="stylesheet" href="backend.css">
+    </head>
+    <body>
+        <div class="top">
+            <img src="icon.png" alt="icon" height="50px" width="55px">
+            <h1>SUMATO</h1>
+            
+        </div>
+        
+        <div class="order">
+            <p id="orderNo"></p>
+            <p id="tokenId"></p>
+            <p id="orderItem"></p>
+            <p id="orderStatus"></p>
+        </div>
+        <div class="check">
+            <button id="checkOrders">Check for New Orders</button>
+        </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDotKuKEoDoOTIDQEZBDI7FBRVH2YBqVP8",
+    authDomain: "food-ordering-app-a1c4c.firebaseapp.com",
+    projectId: "food-ordering-app-a1c4c",
+    storageBucket: "food-ordering-app-a1c4c.appspot.com",
+    messagingSenderId: "962590403114",
+    appId: "1:962590403114:web:a3e55dc0199a622b2e7153"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  import {getDatabase,ref,get,set,child,update,remove}
+  from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+
+  var tokenId = document.getElementById("tokenId");
+  var orderItem = document.getElementById("orderItem");
+  var orderaStatus = document.getElementById("orderStatus");
+  var accept  = document.getElementById("accept");
+  var currentOrder;
+  let orderContiner = document.getElementsByClassName("order")[0];
+  var count = 0;
+  const db = getDatabase();
+  function check(){
+  const dbref = ref(db);
+  get(child(dbref,"Login/")).then((snapshot) => {
+    for( const i of Object.entries(snapshot.val())){
+    get(child(dbref,"Order/" + i[0])).then((snapshot)=>{
+        console.log(i[0]);
+        if(snapshot.exists())
+        { 
+            var tracking = snapshot.val().trackingId;
+            var orderItems = snapshot.val().orderItem;
+            var orderStatus = snapshot.val().orderStatus;
+            let newDiv = document.createElement("div")
+            let button = document.createElement("button");
+            button.textContent = orderStatus 
+            button.id = i[0];
+            button.addEventListener('click',updateData);
+            newDiv.className = "orderRecived"
+            // newDiv.innerHTML = `<p>Roll no : ${i[0]}</p><p>token id : ${tracking}</p> <p>Order Item : ${orderItems}</p> <p>Order Status : ${orderStatus}</p> <button id=${count} onClick="updateData(${i[0]},${orderStatus})">accept</button>`
+            newDiv.innerHTML ="<p>Roll no : "+i[0]+"</p><p>token id : "+tracking+"</p> <p>Order Item : "+orderItems+"</p> "
+            newDiv.appendChild(button)
+            orderContiner.appendChild(newDiv)
+            count++;
+
+          }
+      })
+    }
+  })  
+}  
+    check();    
+    function updateData(e){
+        const dbref = ref(db);
+        get(child(dbref,"Order/"+e.target.id)).then((snapshot)=>{
+        if(snapshot.val().orderStatus==="pending"){
+            document.getElementById(e.target.id).textContent = "Accepted"
+            update(ref(db,"Order/"+e.target.id),{
+                orderStatus : "Accepted"
+            })
+        }else if(snapshot.val().orderStatus==="Accepted"){
+            document.getElementById(e.target.id).textContent = "Ready"
+            update(ref(db,"Order/"+e.target.id),{
+                orderStatus : "Ready"
+            })
+        }else{
+            document.getElementById(e.target.id).textContent = "Collected"
+            update(ref(db,"Order/"+e.target.id),{
+                orderStatus : "Collected"
+            })
+        }
+        })
+    }
+    function reload(){
+        document.location.href = "orderAccept.html"
+    }
+    document.getElementById("checkOrders").addEventListener('click',reload);
+    
+    
+    </script>
+    </body>
+</html>
